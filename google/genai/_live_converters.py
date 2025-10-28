@@ -234,20 +234,6 @@ def _GenerationConfig_to_vertex(
   return to_object
 
 
-def _GoogleMaps_to_mldev(
-    from_object: Union[dict[str, Any], object],
-    parent_object: Optional[dict[str, Any]] = None,
-) -> dict[str, Any]:
-  to_object: dict[str, Any] = {}
-  if getv(from_object, ['auth_config']) is not None:
-    raise ValueError('auth_config parameter is not supported in Gemini API.')
-
-  if getv(from_object, ['enable_widget']) is not None:
-    setv(to_object, ['enableWidget'], getv(from_object, ['enable_widget']))
-
-  return to_object
-
-
 def _GoogleSearch_to_mldev(
     from_object: Union[dict[str, Any], object],
     parent_object: Optional[dict[str, Any]] = None,
@@ -1264,13 +1250,6 @@ def _Tool_to_mldev(
         getv(from_object, ['google_search_retrieval']),
     )
 
-  if getv(from_object, ['google_maps']) is not None:
-    setv(
-        to_object,
-        ['googleMaps'],
-        _GoogleMaps_to_mldev(getv(from_object, ['google_maps']), to_object),
-    )
-
   if getv(from_object, ['computer_use']) is not None:
     setv(to_object, ['computerUse'], getv(from_object, ['computer_use']))
 
@@ -1281,6 +1260,9 @@ def _Tool_to_mldev(
     raise ValueError(
         'enterprise_web_search parameter is not supported in Gemini API.'
     )
+
+  if getv(from_object, ['google_maps']) is not None:
+    setv(to_object, ['googleMaps'], getv(from_object, ['google_maps']))
 
   if getv(from_object, ['google_search']) is not None:
     setv(
@@ -1320,9 +1302,6 @@ def _Tool_to_vertex(
         getv(from_object, ['google_search_retrieval']),
     )
 
-  if getv(from_object, ['google_maps']) is not None:
-    setv(to_object, ['googleMaps'], getv(from_object, ['google_maps']))
-
   if getv(from_object, ['computer_use']) is not None:
     setv(to_object, ['computerUse'], getv(from_object, ['computer_use']))
 
@@ -1335,6 +1314,9 @@ def _Tool_to_vertex(
         ['enterpriseWebSearch'],
         getv(from_object, ['enterprise_web_search']),
     )
+
+  if getv(from_object, ['google_maps']) is not None:
+    setv(to_object, ['googleMaps'], getv(from_object, ['google_maps']))
 
   if getv(from_object, ['google_search']) is not None:
     setv(to_object, ['googleSearch'], getv(from_object, ['google_search']))
