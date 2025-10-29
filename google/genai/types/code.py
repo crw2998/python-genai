@@ -28,8 +28,8 @@ from typing import Any, Callable, Literal, Optional, Sequence, Union, _UnionGene
 import pydantic
 from pydantic import ConfigDict, Field, PrivateAttr, model_validator
 from typing_extensions import Self, TypedDict
-from . import _common
-from ._operations_converters import (
+from .. import _common
+from .._operations_converters import (
 
 
 class CodeExecutionResult(_common.BaseModel):
