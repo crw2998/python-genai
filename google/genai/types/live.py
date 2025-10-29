@@ -30,9 +30,11 @@ from pydantic import ConfigDict, Field, PrivateAttr, model_validator
 from typing_extensions import Self, TypedDict
 from .. import _common
 from .._operations_converters import (
+
     _GenerateVideosOperation_from_mldev,
     _GenerateVideosOperation_from_vertex,
 )
+from .http import HttpOptions, HttpOptionsDict
 
 
 if sys.version_info >= (3, 10):
