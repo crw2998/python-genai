@@ -34,6 +34,14 @@ from .._operations_converters import (
     _GenerateVideosOperation_from_mldev,
     _GenerateVideosOperation_from_vertex,
 )
+
+# Cross-module imports for type references
+if typing.TYPE_CHECKING:
+    from .base import GcsDestination, SlidingWindow
+    from .enums import MaskReferenceMode, SubjectReferenceType
+    from .generation import GenerationConfig
+    from .metadata import Metric
+    from .tools import Tool
 from .http import HttpOptions, HttpOptionsDict
 
 

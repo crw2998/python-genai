@@ -34,6 +34,13 @@ from .._operations_converters import (
     _GenerateVideosOperation_from_mldev,
     _GenerateVideosOperation_from_vertex,
 )
+
+# Cross-module imports for type references
+if typing.TYPE_CHECKING:
+    from .base import JobError, JobErrorDict
+    from .embeddings import EmbedContentConfig, EmbedContentConfigDict, InlinedEmbedContentResponse, InlinedEmbedContentResponseDict
+    from .enums import JobState
+    from .responses import InlinedRequest, InlinedRequestDict, InlinedResponse, InlinedResponseDict
 from .http import HttpOptions, HttpOptionsDict
 
 

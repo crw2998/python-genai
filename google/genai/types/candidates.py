@@ -34,6 +34,15 @@ from .._operations_converters import (
     _GenerateVideosOperation_from_vertex,
 )
 
+# Cross-module imports for type references
+if typing.TYPE_CHECKING:
+    from .base import LogprobsResult, LogprobsResultDict
+    from .content import Content, ContentDict
+    from .enums import FinishReason, GoogleTypeDate, GoogleTypeDateDict
+    from .grounding import GroundingMetadata, GroundingMetadataDict
+    from .metadata import CitationMetadata, CitationMetadataDict, UrlContextMetadata, UrlContextMetadataDict
+    from .safety import SafetyRating, SafetyRatingDict
+
 
 if sys.version_info >= (3, 10):
   # Supports both Union[t1, t2] and t1 | t2

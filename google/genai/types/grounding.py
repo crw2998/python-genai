@@ -34,6 +34,12 @@ from .._operations_converters import (
     _GenerateVideosOperation_from_vertex,
 )
 
+# Cross-module imports for type references
+if typing.TYPE_CHECKING:
+    from .base import Segment, SegmentDict
+    from .retrieval import RagChunk, RagChunkDict, RetrievalMetadata, RetrievalMetadataDict, SearchEntryPoint
+    from .retrieval import SearchEntryPointDict
+
 
 if sys.version_info >= (3, 10):
   # Supports both Union[t1, t2] and t1 | t2

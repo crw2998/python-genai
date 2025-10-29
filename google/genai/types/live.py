@@ -34,6 +34,24 @@ from .._operations_converters import (
     _GenerateVideosOperation_from_mldev,
     _GenerateVideosOperation_from_vertex,
 )
+
+# Cross-module imports for type references
+if typing.TYPE_CHECKING:
+    from .base import ActivityEnd, ActivityEndDict, ActivityStart, ActivityStartDict, AutomaticActivityDetection
+    from .base import AutomaticActivityDetectionDict, ContextWindowCompressionConfigDict, ProactivityConfigDict, SessionResumptionConfigDict, SpeechConfigDict
+    from .base import Transcription, TranscriptionDict
+    from .configs import ContextWindowCompressionConfig, ProactivityConfig, SessionResumptionConfig, SpeechConfig
+    from .content import Blob, BlobDict, Content, ContentDict
+    from .documents import AudioChunk, AudioChunkDict
+    from .enums import ActivityHandling, LiveMusicPlaybackControl, MediaResolution, Modality, MusicGenerationMode
+    from .enums import Scale, TurnCompleteReason, TurnCoverage
+    from .functions import FunctionCall, FunctionCallDict, FunctionResponse, FunctionResponseDict
+    from .generation import GenerationConfig, GenerationConfigDict
+    from .grounding import GroundingMetadata, GroundingMetadataDict
+    from .media import AudioTranscriptionConfig, AudioTranscriptionConfigDict
+    from .metadata import UrlContextMetadata, UrlContextMetadataDict, UsageMetadata, UsageMetadataDict
+    from .prompts import WeightedPrompt, WeightedPromptDict
+    from .thinking import ThinkingConfig, ThinkingConfigDict
 from .http import HttpOptions, HttpOptionsDict
 
 

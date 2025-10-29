@@ -34,6 +34,12 @@ from .._operations_converters import (
     _GenerateVideosOperation_from_mldev,
     _GenerateVideosOperation_from_vertex,
 )
+
+# Cross-module imports for type references
+if typing.TYPE_CHECKING:
+    from .enums import VideoCompressionQuality
+    from .generation import VideoGenerationMask, VideoGenerationMaskDict, VideoGenerationReferenceImage, VideoGenerationReferenceImageDict
+    from .images import Image, ImageDict
 from .http import HttpOptions, HttpOptionsDict
 
 

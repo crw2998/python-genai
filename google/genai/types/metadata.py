@@ -34,6 +34,13 @@ from .._operations_converters import (
     _GenerateVideosOperation_from_vertex,
 )
 
+# Cross-module imports for type references
+if typing.TYPE_CHECKING:
+    from .base import CustomOutputFormatConfigDict
+    from .candidates import Citation, CitationDict
+    from .configs import CustomOutputFormatConfig
+    from .enums import ModalityTokenCount, ModalityTokenCountDict, TrafficType, UrlRetrievalStatus
+
 
 if sys.version_info >= (3, 10):
   # Supports both Union[t1, t2] and t1 | t2

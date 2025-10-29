@@ -34,6 +34,12 @@ from .._operations_converters import (
     _GenerateVideosOperation_from_mldev,
     _GenerateVideosOperation_from_vertex,
 )
+
+# Cross-module imports for type references
+if typing.TYPE_CHECKING:
+    from .base import ReplayInteraction, ReplayInteractionDict, TestTableItem, TestTableItemDict
+    from .content import Content, ContentDict, Part, PartDict
+    from .enums import FileState, FileStatus, FileStatusDict
 from .http import HttpOptions, HttpOptionsDict
 
 

@@ -34,6 +34,14 @@ from .._operations_converters import (
     _GenerateVideosOperation_from_mldev,
     _GenerateVideosOperation_from_vertex,
 )
+
+# Cross-module imports for type references
+if typing.TYPE_CHECKING:
+    from .base import EntityLabel, EntityLabelDict, MaskReferenceConfigDict, StyleReferenceConfigDict, SubjectReferenceConfigDict
+    from .configs import MaskReferenceConfig, StyleReferenceConfig, SubjectReferenceConfig
+    from .enums import ControlReferenceConfig, ControlReferenceConfigDict, EditMode, ImagePromptLanguage, SegmentMode
+    from .generation import PersonGeneration
+    from .safety import SafetyAttributes, SafetyAttributesDict, SafetyFilterLevel
 from .http import HttpOptions, HttpOptionsDict
 
 

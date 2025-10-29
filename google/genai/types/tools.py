@@ -34,6 +34,17 @@ from .._operations_converters import (
     _GenerateVideosOperation_from_vertex,
 )
 
+# Cross-module imports for type references
+if typing.TYPE_CHECKING:
+    from .auth import AuthConfig, AuthConfigDict
+    from .base import UrlContext, UrlContextDict
+    from .enums import Environment
+    from .functions import FunctionDeclaration, FunctionDeclarationDict
+    from .generation import FunctionCallingConfig, FunctionCallingConfigDict
+    from .retrieval import EnterpriseWebSearch, EnterpriseWebSearchDict, GoogleSearch, GoogleSearchDict, GoogleSearchRetrieval
+    from .retrieval import GoogleSearchRetrievalDict, Retrieval, RetrievalConfig, RetrievalConfigDict, RetrievalDict
+    from .schema import SchemaDict
+
 
 if sys.version_info >= (3, 10):
   # Supports both Union[t1, t2] and t1 | t2

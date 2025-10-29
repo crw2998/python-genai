@@ -34,6 +34,19 @@ from .._operations_converters import (
     _GenerateVideosOperation_from_mldev,
     _GenerateVideosOperation_from_vertex,
 )
+
+# Cross-module imports for type references
+if typing.TYPE_CHECKING:
+    from .candidates import LogprobsResultCandidate, LogprobsResultCandidateDict, LogprobsResultTopCandidates, LogprobsResultTopCandidatesDict
+    from .configs import AutoraterConfig, ComputeTokensConfig, ContextWindowCompressionConfig, CountTokensConfig, CustomOutputFormatConfig
+    from .configs import MaskReferenceConfig, MultiSpeakerVoiceConfig, OutputConfig, PrebuiltVoiceConfig, ProactivityConfig
+    from .configs import SessionResumptionConfig, SpeakerVoiceConfig, SpeechConfig, StyleReferenceConfig, SubjectReferenceConfig
+    from .configs import VoiceConfig
+    from .content import Content, ContentDict
+    from .enums import EndSensitivity, MaskReferenceMode, StartSensitivity, SubjectReferenceType
+    from .generation import GenerationConfigDict
+    from .responses import ReplayRequest, ReplayRequestDict, ReplayResponse, ReplayResponseDict
+    from .tools import ToolDict
 from .http import HttpOptions, HttpOptionsDict
 
 

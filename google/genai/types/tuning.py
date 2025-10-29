@@ -34,6 +34,17 @@ from .._operations_converters import (
     _GenerateVideosOperation_from_mldev,
     _GenerateVideosOperation_from_vertex,
 )
+
+# Cross-module imports for type references
+if typing.TYPE_CHECKING:
+    from .base import DistillationDataStats, DistillationDataStatsDict, EncryptionSpec, EncryptionSpecDict
+    from .configs import EvaluationConfig
+    from .content import Content, ContentDict
+    from .enums import GoogleRpcStatus, GoogleRpcStatusDict, JobState, PartnerModelTuningSpec, PartnerModelTuningSpecDict
+    from .enums import PreTunedModel, PreTunedModelDict, PreferenceOptimizationSpec, PreferenceOptimizationSpecDict, TunedModel
+    from .enums import TunedModelDict, TuningMethod, TuningMode
+    from .metrics import EvaluationConfigDict
+    from .parameters import SupervisedHyperParameters, SupervisedHyperParametersDict, VeoHyperParameters, VeoHyperParametersDict
 from .http import HttpOptions, HttpOptionsDict
 
 

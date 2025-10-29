@@ -34,6 +34,17 @@ from .._operations_converters import (
     _GenerateVideosOperation_from_vertex,
 )
 
+# Cross-module imports for type references
+if typing.TYPE_CHECKING:
+    from .base import SpeechConfigDict
+    from .configs import SpeechConfig
+    from .enums import FunctionCallingConfigMode, MediaResolution, Modality, ModelSelectionConfig, ModelSelectionConfigDict
+    from .enums import VideoGenerationMaskMode, VideoGenerationReferenceType
+    from .images import Image, ImageDict
+    from .routing import GenerationConfigRoutingConfig, GenerationConfigRoutingConfigDict
+    from .schema import Schema, SchemaDict
+    from .thinking import ThinkingConfig, ThinkingConfigDict
+
 
 if sys.version_info >= (3, 10):
   # Supports both Union[t1, t2] and t1 | t2

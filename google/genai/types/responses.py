@@ -34,6 +34,11 @@ from .._operations_converters import (
     _GenerateVideosOperation_from_vertex,
 )
 
+# Cross-module imports for type references
+if typing.TYPE_CHECKING:
+    from .base import JobError, JobErrorDict, TokensInfo, TokensInfoDict
+    from .content import GenerateContentConfig, GenerateContentConfigDict, GenerateContentResponse, GenerateContentResponseDict
+
 
 if sys.version_info >= (3, 10):
   # Supports both Union[t1, t2] and t1 | t2

@@ -34,6 +34,24 @@ from .._operations_converters import (
     _GenerateVideosOperation_from_mldev,
     _GenerateVideosOperation_from_vertex,
 )
+
+# Cross-module imports for type references
+if typing.TYPE_CHECKING:
+    from .candidates import Candidate, CandidateDict
+    from .code import CodeExecutionResult, CodeExecutionResultDict, ExecutableCode, ExecutableCodeDict
+    from .enums import MediaResolution, ModalityTokenCount, ModalityTokenCountDict, ModelSelectionConfig, ModelSelectionConfigDict
+    from .enums import TrafficType
+    from .files import FileData, FileDataDict
+    from .functions import FunctionCall, FunctionCallDict, FunctionResponse, FunctionResponseDict, FunctionResponseFileData
+    from .functions import FunctionResponseFileDataDict
+    from .generation import AutomaticFunctionCallingConfig, AutomaticFunctionCallingConfigDict
+    from .images import Image, ImageConfig, ImageConfigDict, ImageDict
+    from .media import VideoMetadata, VideoMetadataDict
+    from .prompts import GenerateContentResponsePromptFeedback, GenerateContentResponsePromptFeedbackDict
+    from .routing import GenerationConfigRoutingConfig, GenerationConfigRoutingConfigDict
+    from .safety import SafetySetting, SafetySettingDict
+    from .thinking import ThinkingConfig, ThinkingConfigDict
+    from .tools import Tool, ToolConfig, ToolConfigDict, ToolDict
 from .http import HttpOptions, HttpOptionsDict
 
 
